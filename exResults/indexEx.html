@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Nannapat - Exercises</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+        #mobile-menu.active {
+            max-height: 600px;
+            opacity: 1;
+        }
+
+        .exercise-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(145deg, #ffffff, #fdf2f8);
+        }
+        .exercise-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(219, 39, 119, 0.15);
+            background: #ffffff;
+            border-color: #fbcfe8;
+        }
+
+        .bg-blob {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-[#fffaff] text-gray-800 relative overflow-x-hidden">
+
+    <div class="bg-blob w-96 h-96 bg-pink-200 top-[-10%] right-[-5%]"></div>
+    <div class="bg-blob w-80 h-80 bg-purple-100 bottom-[10%] left-[-5%]"></div>
+
+    <header class="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 shadow-sm border-b border-pink-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-gray-900">
+                <a href="../index.html#home">Nan<span class="text-pink-500">Nannapat</span></a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-medium text-[15px]">
+                <a href="../index.html#home" class="hover:text-pink-500 transition">Home</a>
+                <a href="#" class="text-pink-500 border-b-2 border-pink-500 pb-1">Exercise</a>
+                <a href="../index.html#about" class="hover:text-pink-500 transition">About</a>
+                <a href="../index.html#skills" class="hover:text-pink-500 transition">Skills</a>
+                <a href="../index.html#work" class="hover:text-pink-500 transition">Work</a>
+                <a href="../index.html#contact" class="hover:text-pink-500 transition">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-pink-500 focus:outline-none p-2 border border-pink-100 rounded-xl bg-pink-50/50 hover:bg-pink-100 transition">
+                <i class="fas fa-bars-staggered text-2xl"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-xl">
+            <div class="flex flex-col space-y-4 px-6 py-8 font-medium">
+                <a href="../index.html#home" class="hover:text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-home text-sm"></i> Home
+                </a>
+                <a href="#" class="text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-code text-sm"></i> Exercise
+                </a>
+                <a href="../index.html#about" class="hover:text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-user text-sm"></i> About
+                </a>
+                <a href="../index.html#skills" class="hover:text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-star text-sm"></i> Skills
+                </a>
+                <a href="../index.html#work" class="hover:text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-briefcase text-sm"></i> Work
+                </a>
+                <a href="../index.html#contact" class="hover:text-pink-500 transition flex items-center gap-3">
+                    <i class="fas fa-envelope text-sm"></i> Contact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-32 pb-20">
+        <div class="mb-20 relative">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight">
+                My <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Exercise</span>
+            </h1>
+            <div class="h-2 w-24 bg-gradient-to-r from-pink-500 to-purple-400 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <script>
+                const exercises = [
+                    { id: "01", title: "Exercise 1", tag: "HTML", icon: "fa-user-circle" },
+                    { id: "02", title: "Exercise 2", tag: "HTML", icon: "fa-id-badge" },
+                    { id: "03", title: "Exercise 3", tag: "CSS", icon: "fa-address-card" },
+                    { id: "04", title: "Exercise 4", tag: "CSS", icon: "fa-laptop-code" },
+                    { id: "05", title: "Exercise 5", tag: "HTML", icon: "fa-file-code" },
+                    { id: "06", title: "Exercise 6", tag: "HTML", icon: "fa-terminal" },
+                    { id: "07", title: "Exercise 7", tag: "CSS", icon: "fa-newspaper" },
+                    { id: "08", title: "Exercise 8", tag: "CSS", icon: "fa-blog" }
+                ];
+
+
+        document.write(exercises.map(ex => `
+            <a href="ex${parseInt(ex.id)}.html" class="exercise-card group p-8 rounded-[2rem] border border-pink-100 flex flex-col shadow-sm">
+                <div class="flex flex-col h-full relative z-10">
+                    <div class="w-12 h-12 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 text-pink-500 group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas ${ex.icon} text-xl"></i>
+                    </div>
+                    <span class="text-pink-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">${ex.tag}</span>
+                    <h3 class="text-xl font-bold mb-8 text-gray-800 group-hover:text-pink-600 transition-colors">${ex.title}</h3>
+                    <div class="flex items-center gap-2 text-pink-500 font-bold text-sm mt-auto">
+                        <span class="group-hover:mr-2 transition-all">View Project</span>
+                        <i class="fas fa-chevron-right text-[10px] opacity-0 group-hover:opacity-100 transition-all"></i>
+                    </div>
+                </div>
+            </a>
+        `).join(''));
+            </script>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl font-bold mb-4 tracking-tight">Nannapat</h2>
+            <div class="flex justify-center space-x-6 text-gray-500">
+        
+            </div>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent"></div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if(mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars-staggered');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars-staggered');
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                icon.classList.add('fa-bars-staggered');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+    </script>
+</body>
+</html>

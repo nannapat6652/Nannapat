@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>6740011034 Nannapat Loserangsiwat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        
+        .bg-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#ec489912 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        #mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body class="bg-pattern text-gray-800">
+
+    <header class="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-gray-900">Nannapat</div>
+            
+            <div class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="../index.html#home" class="hover:text-pink-500 transition">Home</a>
+                <a href="indexEx.html" class="text-pink-500 border-b-2 border-pink-500 pb-1">Exercise</a>
+                <a href="../index.html#about" class="hover:text-pink-500 transition">About</a>
+                <a href="../index.html#skills" class="hover:text-pink-500 transition">Skills</a>
+                <a href="../index.html#work" class="hover:text-pink-500 transition">Work</a>
+                <a href="../index.html#contact" class="hover:text-pink-500 transition">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-pink-500 focus:outline-none p-2 rounded-lg bg-pink-50">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col space-y-4 px-6 py-6 font-medium">
+                <a href="../index.html#home" class="mobile-link hover:text-pink-500 transition">Home</a>
+                <a href="indexEx.html" class="mobile-link text-pink-500 transition">Exercise</a>
+                <a href="../index.html#about" class="mobile-link hover:text-pink-500 transition">About</a>
+                <a href="../index.html#contact" class="mobile-link hover:text-pink-500 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="h-24"></div>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-bold mt-2 text-gray-900">Exercise 1</h2>
+            <div class="h-1.5 w-20 bg-pink-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+               
+                    <img
+                        src="../ExImages/image7.png"
+                        alt="Exercise Result"
+                        class="w-full max-w-[320px] block mx-auto"
+                    />
+                </div>
+
+                <div class="md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-file-alt text-pink-500 text-xl"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Description</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+    <div class="text-gray-600 leading-relaxed">
+        <p class="whitespace-pre-line">
+            <strong class="text-pink-500 text-lg mb-2 block">สิ่งที่โจทย์ต้องการ:</strong>
+            <span class="flex items-start gap-3 mb-2">ตั้งค่าพื้นหลังของการ์ด (`.profile-card`) เป็นสีขาว (`#ffffff`)</span>
+            <span class="flex items-start gap-3 mb-2">เพิ่มระยะห่างภายใน (padding) ให้การ์ด 20px รอบด้าน</span>
+            <span class="flex items-start gap-3 mb-2">ทำให้ขอบของการ์ดโค้งมน (border-radius) 8px</span>
+            <span class="flex items-start gap-3 mb-2">เพิ่มเงาให้กับการ์ด (box-shadow) โดยใช้ค่า `0 4px 8px rgba(0, 0, 0, 0.1)`</span>
+            <span class="flex items-start gap-3 mb-2">จัดข้อความใน `h2` ให้อยู่กึ่งกลาง และเปลี่ยนสีตัวอักษรเป็น `darkblue` </span>
+            <span class="flex items-start gap-3 mb-2">เพิ่มระยะห่างด้านล่าง (margin-bottom) ให้แต่ละย่อหน้า (`p`) เป็น 10px </span>
+            <span class="flex items-start gap-3 mb-2">กำหนดความกว้างสูงสุดของการ์ด (`.profile-card`) เป็น 350px </span>
+        </p>
+    </div>
+</div>
+
+                        <div class="pt-6 flex flex-wrap gap-4 border-t border-gray-50">
+                            <a href="../exResults/exResults7.html" target="_blank" class="bg-pink-500 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-pink-600 transition shadow-lg shadow-pink-200">
+                                View Result
+                            </a>
+                            <a href="https://github.com/Chaowat-k" target="_blank" class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-black transition">
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-20 bg-gray-950 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4 tracking-tight">Nannapat</span></h2>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
